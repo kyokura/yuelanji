@@ -1,0 +1,29 @@
+{% extends "basearticle.html" %}
+
+
+{% block content %}
+<div class="posts">
+    {% for post in post_list %}
+    
+        <section class="post">
+            <header class="post-header">
+                <h2 class="post-title"><a href="{% url 'detail2' id=post.id %}">{{ post.title }}</a></h2>
+
+                    <p class="post-meta">
+                        Time:  {{ post.date_time |date:'Y M d'}} <a class="post-category post-category-js" href="{%url 'search_tag2' tag2=post.category %}">{{ post.tagshow|title }}</a>
+                    </p>
+            </header>
+            <div class="post-description">
+                    <p>
+                        {{ post.content }}
+                    </p>
+            </div>
+
+                
+             </br></br></br>   
+        </section>
+    
+    {% endfor %}
+    
+</div><!-- /.blog-post -->
+{% endblock %}

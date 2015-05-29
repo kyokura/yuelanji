@@ -1,0 +1,22 @@
+
+{% extends "basearticle.html" %}
+
+{% block content %}
+<div class="posts">
+        <section class="post">
+            <header class="post-header">
+                <h2 class="post-title">{{ post.title }}</h2>
+
+                    <p class="post-meta">
+                        Time:  {{ post.date_time|date:'Y /m /d'}} {{ post.tagshow }}
+                    </p>
+            </header>
+
+                <div class="post-description">
+                    <p>
+                        {{ post.content }}
+                    </p>
+                </div>
+        </section>
+</div><!-- /post -->
+{% endblock %}
